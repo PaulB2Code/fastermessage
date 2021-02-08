@@ -14,6 +14,7 @@ type FasterAccount struct {
 	XapiKey string
 }
 
+//ResponseFasterSms :
 type ResponseFasterSms struct {
 	Status        bool   `json:"status"`
 	From          string `json:"from"`
@@ -36,6 +37,7 @@ func NewFasterAccount(XapiKey string) FasterAccount {
 	return FasterAccount{XapiKey: XapiKey}
 }
 
+//SendSms :Send Sms
 func (f *FasterAccount) SendSms(from, to, msg string) (ResponseFasterSms, error) {
 	var respObj ResponseFasterSms
 
